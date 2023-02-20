@@ -251,6 +251,7 @@ public class VaccineJPanel extends javax.swing.JPanel {
        vac.setVaccinationName(vaccinationName);
        vac.setCourseCompleted(courseCompleted);
         populateTable();
+        JOptionPane.showMessageDialog(null, "Added");
        }
        else
        {
@@ -292,6 +293,7 @@ public class VaccineJPanel extends javax.swing.JPanel {
             
                 vac.setVaccinationName(vacName);
                 vac.setCourseCompleted(Compl);
+                JOptionPane.showMessageDialog(null, "Updated!");
         }catch(HeadlessException | NumberFormatException ex){
              JOptionPane.showMessageDialog(this, "Please check data and try again!");
         }

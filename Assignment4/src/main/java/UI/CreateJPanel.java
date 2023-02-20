@@ -73,7 +73,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         fPetType = new javax.swing.JTextField();
         fBreed = new javax.swing.JTextField();
         submitBtn = new javax.swing.JButton();
-        backBtn = new javax.swing.JButton();
         getDateBtn = new javax.swing.JButton();
         ftdate = new javax.swing.JTextField();
 
@@ -118,13 +117,6 @@ public class CreateJPanel extends javax.swing.JPanel {
             }
         });
 
-        backBtn.setText("back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
-            }
-        });
-
         getDateBtn.setText("get Date");
         getDateBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,9 +133,6 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(172, 172, 172)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(backBtn))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(98, 98, 98)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,9 +240,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(fBreed, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(submitBtn)
-                .addGap(71, 71, 71)
-                .addComponent(backBtn)
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -335,14 +322,6 @@ public class CreateJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_submitBtnActionPerformed
 
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-         userProcessContainer.remove(this);
-          CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-         layout.next(userProcessContainer);
-       
-    }//GEN-LAST:event_backBtnActionPerformed
-
     private void fpetNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fpetNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fpetNameActionPerformed
@@ -357,7 +336,6 @@ public class CreateJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBtn;
     private javax.swing.JTextField fBreed;
     private javax.swing.JTextField fFirstName;
     private javax.swing.JTextField fGender;

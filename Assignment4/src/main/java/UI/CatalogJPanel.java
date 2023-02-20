@@ -59,7 +59,6 @@ public class CatalogJPanel extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         submitBtn = new javax.swing.JButton();
-        backBtn = new javax.swing.JButton();
         fPlanID = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         table1 = new javax.swing.JTable();
@@ -93,13 +92,6 @@ public class CatalogJPanel extends javax.swing.JPanel {
         submitBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 submitBtnActionPerformed(evt);
-            }
-        });
-
-        backBtn.setText("back");
-        backBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBtnActionPerformed(evt);
             }
         });
 
@@ -179,10 +171,6 @@ public class CatalogJPanel extends javax.swing.JPanel {
                         .addComponent(submitBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backBtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(67, 67, 67)
                 .addComponent(updateBtn)
                 .addGap(305, 305, 305)
@@ -226,15 +214,12 @@ public class CatalogJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel17)
                             .addComponent(fCostperMonth1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(77, 77, 77)
-                        .addComponent(updateBtn)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
-                        .addComponent(backBtn))
+                        .addComponent(updateBtn))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(viewBtn)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(viewBtn)))
+                .addContainerGap(55, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(137, 137, 137)
@@ -291,7 +276,7 @@ public void populateTable()
 }
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
-       
+       try{
         String pname = fPlanName1.getText();
         String cpm = fCostperMonth1.getText();
         //String cpa = fCostperAnnum1.getText();
@@ -300,19 +285,15 @@ public void populateTable()
         plan1.setPlanName(pname);
         plan1.setCostperMonth(Integer.valueOf(cpm));
         //plan1.setCostperAnnum(Integer.valueOf(cpa));
-          
+         JOptionPane.showMessageDialog(null, "Updated!");
+       }catch(HeadlessException | NumberFormatException ex){
+            
+                         
+             JOptionPane.showMessageDialog(null, "Please check data and try again!");
+       }
         populateTable();  
         
     }//GEN-LAST:event_updateBtnActionPerformed
-
-    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
-        // TODO add your handling code here:
-         userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
-        
-    }//GEN-LAST:event_backBtnActionPerformed
 
     private void fCostperAnnumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fCostperAnnumActionPerformed
         // TODO add your handling code here:
@@ -348,7 +329,6 @@ public void populateTable()
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBtn;
     private javax.swing.JTextField fCostperAnnum;
     private javax.swing.JTextField fCostperMonth;
     private javax.swing.JTextField fCostperMonth1;

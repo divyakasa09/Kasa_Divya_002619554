@@ -11,6 +11,7 @@ import Model.InsurancePlans;
 import Model.Pet;
 import Model.PlanDetail;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -151,6 +152,7 @@ public class AssignJPanel extends javax.swing.JPanel {
   //  setting the value of insurance to table
                DefaultTableModel model= (DefaultTableModel )jTable1.getModel();
                model.setValueAt(plan1.getPlanID(), selectedRowIndex, 1);
+                JOptionPane.showMessageDialog(this, "Assigned!");
       populate();
     }//GEN-LAST:event_assignBtnActionPerformed
 

@@ -57,7 +57,6 @@ public class ManageApplicantJPanel extends javax.swing.JPanel {
         fappID = new javax.swing.JTextField();
         searchByName = new javax.swing.JButton();
         fByName = new javax.swing.JTextField();
-        backBn = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
@@ -105,13 +104,6 @@ public class ManageApplicantJPanel extends javax.swing.JPanel {
             }
         });
 
-        backBn.setText("back");
-        backBn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backBnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -127,20 +119,14 @@ public class ManageApplicantJPanel extends javax.swing.JPanel {
                 .addComponent(fByName, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addContainerGap(473, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(backBn)
-                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addGap(418, 418, 418))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(viewDetails)
-                                .addGap(438, 438, 438))))))
+                        .addComponent(jButton3)
+                        .addGap(418, 418, 418))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(viewDetails)
+                        .addGap(438, 438, 438))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1))
@@ -161,19 +147,9 @@ public class ManageApplicantJPanel extends javax.swing.JPanel {
                 .addComponent(viewDetails)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jButton3)
-                .addGap(37, 37, 37)
-                .addComponent(backBn))
+                .addGap(62, 62, 62))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void backBnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBnActionPerformed
-        // TODO add your handling code here:
-        
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-        
-    }//GEN-LAST:event_backBnActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -312,7 +288,6 @@ public void populateTable1()
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton backBn;
     private javax.swing.JTextField fByName;
     private javax.swing.JTextField fappID;
     private javax.swing.JButton jButton3;

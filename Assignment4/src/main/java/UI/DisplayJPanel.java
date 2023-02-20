@@ -8,6 +8,8 @@ import Model.Applicant;
 import Model.Business;
 import Model.Pet;
 import java.awt.CardLayout;
+import java.awt.HeadlessException;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -248,6 +250,7 @@ private void populateApplicantDetails()
 
     private void updateBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBtnActionPerformed
         // TODO add your handling code here:
+        try{
         String applicantionID = fappID.getText();
         String fname=fFirstName.getText();
         String lname=fLastName.getText();
@@ -269,9 +272,14 @@ private void populateApplicantDetails()
         pet.setGender(gender);
         pet.setBreed(breed);
         pet.setPetType(petType);
+        JOptionPane.showMessageDialog(null, "Updated!");
         
-         
-        
+        }
+           catch(HeadlessException | NumberFormatException ex){
+           
+                         
+             JOptionPane.showMessageDialog(null, "Please check data and try again!");
+           }
         
     }//GEN-LAST:event_updateBtnActionPerformed
 
