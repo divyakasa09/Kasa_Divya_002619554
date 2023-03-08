@@ -8,6 +8,7 @@ package model;
  *
  * @author divya
  */
+// Employee class inheriting users
 public class Employee extends  Users{
     int empId;
     int experience;
